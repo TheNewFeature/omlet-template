@@ -11,6 +11,8 @@ with open(os.path.join(os.path.dirname(__file__), 'config.json'), 'r') as f:
 
 logger = logging.Logger(__name__)
 
+BASE_URL = 'host.docker.internal'
+
 
 class OmletDatasetLoader:
     pass
@@ -23,7 +25,7 @@ def download_dataset(object_name: Optional[str] = None):
     logger.info(f'Loading dataset({object_name}) from remote storage..')
     service = DatasetStorageService(
         storage=MinioStorage(
-            endpoint='localhost', access_key='root', secret_key='00000000'))
+            endpoint=BASE_URL, access_key='root', secret_key='00000000'))
     file_path = os.path.join(os.path.dirname(__file__), object_name + '.zip')
     if os.path.exists(dir_path := os.path.splitext(file_path)[0]):
         logger.info(f'Dataset({object_name}) already exists on local machine.')

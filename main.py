@@ -26,8 +26,7 @@ def main():
     model.compile(optimizer=tf.keras.optimizers.Adam(),
                   loss=tf.keras.losses.CategoricalCrossentropy(),
                   metrics=[tf.keras.metrics.CategoricalAccuracy(),
-                           tf.keras.metrics.CategoricalCrossentropy()],
-                  callbacks=callbacks)
+                           tf.keras.metrics.CategoricalCrossentropy()])
 
     epochs = 1
     history = model.fit(train_dataset, epochs=1)

@@ -7,6 +7,7 @@ from omlet.checkpoint import save
 
 class OmletCheckpointCallback(tf.keras.callbacks.Callback):
     def __init__(self, per_episode: int):
+        super(OmletCheckpointCallback, self).__init__()
         self._per_episode = per_episode
 
     def on_epoch_end(self, epoch, logs=None):
