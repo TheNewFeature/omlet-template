@@ -1,8 +1,13 @@
+import json
 import logging
 import os
 import shutil
+from typing import Optional
 
 from omlet_common.storage.services import MinioStorage, DatasetStorageService
+
+with open(os.path.join(os.path.dirname(__file__), 'config.json'), 'r') as f:
+    config = json.load(f)
 
 logger = logging.Logger(__name__)
 
@@ -11,7 +16,10 @@ class OmletDatasetLoader:
     pass
 
 
-def download_dataset(object_name: str):
+def download_dataset(object_name: Optional[str] = None):
+    object_name = object_name or config.get('Dataset', None)
+    if not object_name:
+        raise Exception('Dataset is not defined.')
     logger.info(f'Loading dataset({object_name}) from remote storage..')
     service = DatasetStorageService(
         storage=MinioStorage(
