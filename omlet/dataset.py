@@ -18,7 +18,16 @@ class OmletDatasetLoader:
     pass
 
 
-def download_dataset(object_name: Optional[str] = None):
+def download_dataset(object_name: Optional[str] = None) -> str:
+    """`MinioStorage`로부터 `object_name`에 해당하는 `Dataset`을 다운로드 받습니다.
+    다운로드 된 `Dataset`의 로컬 경로를 반환합니다.
+
+    Args:
+        :param Optional[str] object_name: ...
+
+    Returns:
+        :returns: str
+    """
     object_name = object_name or config.get('Dataset', None)
     if not object_name:
         raise Exception('Dataset is not defined.')

@@ -2,5 +2,6 @@
     "Location": "localhost",
     "Framework": "TensorFlow",
     "Session": 0,
-    "Dataset": "7314b5da-431d-4dda-94e6-e4d2adbe61b8"
+    "Dataset": "7314b5da-431d-4dda-94e6-e4d2adbe61b8",
+    "Token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6Ilx1YWMxNVx1YzgxNVx1YzExZCIsInVzZXJuYW1lIjoicmFwc2VhbGsiLCJlbWFpbCI6InBpb25vNjIzQG5hdmVyLmNvbSIsInBhc3N3b3JkIjoiMDAwMCJ9.uk6TjJetPaEreB0WUC-t6__Z5Ff4CWEHIRJhC2fd0I0"
 }

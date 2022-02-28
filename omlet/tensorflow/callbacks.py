@@ -6,6 +6,7 @@ from omlet.checkpoint import save
 
 
 class OmletCheckpointCallback(tf.keras.callbacks.Callback):
+    """`TensorFlow` Functional API의 `model.fit()`에서 `Checkpoint`를 저장하기 위한 콜백"""
     def __init__(self, per_episode: int):
         super(OmletCheckpointCallback, self).__init__()
         self._per_episode = per_episode
