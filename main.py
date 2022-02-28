@@ -5,7 +5,7 @@ import tensorflow as tf
 
 from models import Model
 from datasets import CatsVsDogsDataset
-from omlet.checkpoint import save
+from omlet.checkpoint import save_checkpoint
 from omlet.dataset import download_dataset
 from omlet.tensorflow.callbacks import OmletCheckpointCallback
 
@@ -33,7 +33,7 @@ def main():
     print('history:', history.history)
 
     checkpoint_path = os.path.join(os.path.dirname(__file__), 'model.ckpt')
-    save(model, checkpoint_path, episode=epochs)
+    save_checkpoint(model, checkpoint_path, episode=epochs)
 
 
 if __name__ == "__main__":

@@ -23,7 +23,7 @@ def download_dataset(object_name: Optional[str] = None) -> str:
     다운로드 된 `Dataset`의 로컬 경로를 반환합니다.
 
     Args:
-        :param Optional[str] object_name: ...
+        :param Optional[str] object_name: 다운로드 받을 `Dataset`의 `object_name`
 
     Returns:
         :returns: str
